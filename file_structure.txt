@@ -1,0 +1,12 @@
+movie-recom-chat/
+│
+├── app.py               # FastAPI 
+├── routes.py            # API endpoints                
+├── requirements.txt     # py packs
+│
+├── frontend/
+│   ├── index.html       
+│   ├── style.css       
+│   └── script.js        
+│
+└── README.md            
