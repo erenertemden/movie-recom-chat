@@ -10,8 +10,7 @@ function appendMessage(sender, text) {
   chat.scrollTop = chat.scrollHeight;
 }
 
-// İlk mesaj
-appendMessage("bot", "Hi! Ask me for a movie recommendation. 🎬");
+appendMessage("bot", "Hi! Ask me for a movie recommendation.");
 
 form.onsubmit = async (e) => {
   e.preventDefault();
@@ -20,7 +19,7 @@ form.onsubmit = async (e) => {
 
   appendMessage("user", text);
   input.value = "";
-  appendMessage("bot", "...");
+  appendMessage("bot", ". . .");
 
   try {
     const res = await fetch("http://localhost:8000/chat", {
@@ -31,6 +30,6 @@ form.onsubmit = async (e) => {
     const data = await res.json();
     chat.lastChild.innerText = data.response || "No response.";
   } catch {
-    chat.lastChild.innerText = "❌ Network error.";
+    chat.lastChild.innerText = "network error.";
   }
 };
